@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form th:action="cars" th:method="get">
+    Count of cars:
+    <select name="count">
+        <option th:text="''"/>
+        <option th:text="1"/>
+        <option th:text="2"/>
+        <option th:text="3"/>
+        <option th:text="4"/>
+        <option th:text="5"/>
+    </select>
+    <input type="submit" value="Submit">
+
+</form>
+<br>
+
+<table>
+    <tr>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Color</th>
+    </tr>
+
+    <tr th:each="car : ${carsList}">
+        <td th:text="${car.brand}" />
+        <td th:text="${car.model}" />
+        <td th:text="${car.color}" />
+    </tr>
+
+</table>
+
+</body>
+</html>
